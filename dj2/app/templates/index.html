@@ -1,0 +1,38 @@
+{%  extends "front_base.html" %}
+
+{% block content %}
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">肇庆学院宿舍管理系统</h1>
+          <p>welcome    {{ stu_id }}</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          {%  for notice in notices %}
+          <div class="col-md-4">
+            <h2>{{ notice.title }}</h2>
+            <h3>{{ notice.cre_date|date:"Y-m-d " }}</h3>
+            <p>{{  notice.message  }}</p>
+            <p><a class="btn btn-secondary" href="/displaynotice/?noticeid={{notice.id}}" role="button">View details &raquo;</a></p>
+          </div>
+          {% endfor  %}
+          
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer class="container">
+      <p>&copy; Company 2017</p>
+    </footer>
+    {% endblock %}

@@ -1,0 +1,34 @@
+{%  extends "front_base.html" %}
+
+{% block content %}
+
+
+
+
+      <div class="container">
+        <p><a href="/repair/">保修</a></p>
+      <h2 >历史报修</h2>
+      <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">报修类型</th>
+      <th scope="col">报修详情</th>
+      <th scope="col">报修时间</th>
+      <th scope="col">状态</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for repair in repairs %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{repair.rep_type}}</td>
+      <td>{{repair.message}}</td>
+      <td>{{repair.cre_date}}</td>
+      <td>{{repair.statu}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
