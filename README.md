@@ -1,5 +1,4 @@
 # apartment_system
-//It's project is design for manage dorm in college
 
 //首先配置环境  使用的是Ubuntu,该系统自带python3
 
@@ -21,13 +20,13 @@ vim dj2/settings.py                     //编写配置文件
 
 //dj2/setting.py
 
-首先可以设置
+//首先可以设置
 ALLOWED_HOSTS = ['*']                  //允许非本台电脑进行访问  还需要把对应的端口给开放出来
 INSTALLED_APPS  中添加  'app',         //添加应用
 INSTALLED_APPS  第一行添加 'suit',      //添加后台插件
 
 
-设置数据库配置
+//设置数据库配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -70,7 +69,7 @@ vim app/models.py
 vim app/admin.py
 
 
-设置好了，就可以启动MySQL服务
+//设置好了，就可以启动MySQL服务
 
 sudo service mysql start
 
@@ -79,23 +78,22 @@ create database apartment default character set utf8;
 grant all privileges on databasename.* to 'username@'%' identified by'password' with grant option;
 exit
 
-然后执行命令
+//然后执行命令
 
 python3 manange.py createsuperuser
 
-下载可以启动查看自己的后台情况
+//下载可以启动查看自己的后台情况
 python3 manange.py runserver 8080
 
-打开浏览器 127.0.0.1：8080/admin
+//打开浏览器 127.0.0.1：8080/admin
 
-接下来是处理视图
+//接下来是处理视图
 vim app/views.py
-还有处理html文件
+//还有处理html文件
 mkdir app/templates
 vim app/templates/index.html
 
-最后是处理url
+//最后是处理url
 vim dj2/urls.py
 
-基本处理到这里，如有建议请留言
-
+//基本处理到这里，如有建议请留言
