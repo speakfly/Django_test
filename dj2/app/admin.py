@@ -5,8 +5,6 @@ from .models import Academy,Major,Grade,Apartment,Room,Student,Notice,Repair
 class AcademyAdmin(admin.ModelAdmin):
 	list_display  = ('aca_name','aca_tele')
 	search_fields = ('aca_name','aca_tele')
-	suit_form_tabs = (('major', 'Major'), ('grade', 'Grade'),
-		)
 class MajorAdmin(admin.ModelAdmin):
 	list_display  = ('maj_name','aca_name')
 	search_fields = ('maj_name',)
