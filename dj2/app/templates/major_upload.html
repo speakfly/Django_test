@@ -1,0 +1,6 @@
+<form enctype="multipart/form-data" action="http://127.0.0.1:8080/major_upload/" method="post">  
+    {%  csrf_token  %}
+   <input type="file" name="major_file" />  
+   <br/>  
+   <input type="submit" value="upload"/>  
+</form>  
