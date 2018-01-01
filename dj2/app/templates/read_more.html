@@ -1,0 +1,29 @@
+{%  extends "front_base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+<table class="table .table-bordered table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">标题</th>
+      <th scope="col">作者</th>
+      <th scope="col">日期</th>
+      <th scope="col">详情</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%  for notice in notices %}
+    <tr>
+      <th scope="row">{{notice.title}}</th>
+      <th scope="row">{{notice.author}}</th>
+      <th scope="row">{{notice.cre_date}}</th>
+      <th scope="row"><a class="btn btn-secondary" href="/displaynotice/?noticeid={{notice.id}}" role="button">View details &raquo;</a></th>  
+    </tr>
+    {% endfor  %}
+  </tbody>
+</table>
+
+</div>
+{% endblock %}

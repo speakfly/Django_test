@@ -1,60 +1,115 @@
-<form enctype="multipart/form-data" action="http://127.0.0.1:8080/academy_upload/" method="post">  
-    {%  csrf_token  %}
-    <p>academy</p>
-   <input type="file" name="academy_file" />  
-   <br/>  
-   <input type="submit" value="upload"/>  
-</form>  
-<p></p>
-<p></p>
-<form enctype="multipart/form-data" action="http://127.0.0.1:8080/major_upload/" method="post">  
-    {%  csrf_token  %}
-    <p>major</p>
-   <input type="file" name="major_file" />  
-   <br/>  
-   <input type="submit" value="upload"/>  
-</form>  
-<p></p>
-<p></p>
-<form enctype="multipart/form-data" action="http://127.0.0.1:8080/grade_upload/" method="post">  
-    {%  csrf_token  %}
-    <p>grade</p>
-   <input type="file" name="grade_file" />  
-   <br/>  
-   <input type="submit" value="upload"/>  
-</form>  
-<p></p>
-<p></p>
-<form enctype="multipart/form-data" action="http://127.0.0.1:8080/apartment_upload/" method="post">  
-    {%  csrf_token  %}
-    <p>apartment</p>
-   <input type="file" name="apartment_file" />  
-   <br/>  
-   <input type="submit" value="upload"/>  
-</form>  
-<p></p>
-<p></p>
-<form enctype="multipart/form-data" action="http://127.0.0.1:8080/room_upload/" method="post">  
-    {%  csrf_token  %}
-    <p>room</p>
-   <input type="file" name="room_file" />  
-   <br/>  
-   <input type="submit" value="upload"/>  
-</form>  
-<p></p>
-<p></p>
-<form enctype="multipart/form-data" action="http://127.0.0.1:8080/student_upload/" method="post">  
-    {%  csrf_token  %}
-    <p>student</p>
-   <input type="file" name="student_file" />  
-   <br/>  
-   <input type="submit" value="upload"/>  
-</form>  
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>index</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<p></p>
-<a href='/academy_exmaple_download/'>academy</a>
-<a href='/major_exmaple_download/'>major</a>
-<a href='/grade_exmaple_download/'>grade</a>
-<a href='/apartment_exmaple_download/'>apartment</a>
-<a href='/room_exmaple_download/'>room</a>
-<a href='/student_exmaple_download/'>student</a>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> 
+  </head>
+  <body>
+      <!-- <div class="container"> -->
+<div class="container">
+
+
+<table class="table .table-bordered table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">模板</th>
+      <th scope="col">上传文件</th>
+      <th scope="col">处理</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><a href='/academy_exmaple_download/'>学院</a></td>
+      <form enctype="multipart/form-data" action="http://127.0.0.1:8080/academy_upload/" method="post">  
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="academy_file" />  
+      </td> 
+      <td>
+      <input type="submit" value="upload"/>  
+      </form>  
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><a href='/major_exmaple_download/'>专业</a></td>
+      <form enctype="multipart/form-data" action="http://127.0.0.1:8080/major_upload/" method="post">  
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="major_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><a href='/grade_exmaple_download/'>班级</a></td>
+      <form enctype="multipart/form-data" action="http://127.0.0.1:8080/grade_upload/" method="post">  
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="grade_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><a href='/apartment_exmaple_download/'>公寓</a></td>
+      <form enctype="multipart/form-data" action="http://127.0.0.1:8080/apartment_upload/" method="post">  
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="apartment_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><a href='/room_exmaple_download/'>宿舍号</a></td>
+      <form enctype="multipart/form-data" action="http://127.0.0.1:8080/room_upload/" method="post">
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="room_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><a href='/student_exmaple_download/'>学生</a></td>
+      <form enctype="multipart/form-data" action="http://127.0.0.1:8080/student_upload/" method="post">
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="student_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>

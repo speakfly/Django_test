@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django import forms
 import sys,os
 import xlrd
+from django.contrib.admin.views.decorators import staff_member_required
 class UserForm(forms.Form):
 	stu_id = forms.CharField(max_length = 20)
 	password = forms.CharField(max_length = 20)
@@ -12,6 +13,10 @@ class RepairForm(forms.Form):
 	rep_type = forms.CharField(max_length = 20)
 	message  = forms.CharField(max_length = 50)
 
+class PasswordForm(forms.Form):
+	old_password  = forms.CharField(max_length = 20)
+	new_password1 = forms.CharField(max_length = 20)
+	new_password2 = forms.CharField(max_length = 20)
 
 def login(request):
 	if request.method == 'POST':
@@ -74,10 +79,17 @@ def updatepassword(request):
 	if len(users) == 0:
 		return HttpResponseRedirect('/login/')
 	if request.method == 'POST':
-		uf = UserForm(request.POST)
+		uf = PasswordForm(request.POST)
 		if uf.is_valid():
-			password = uf.cleaned_data['password']
-			Student.objects.filter(stu_id=stu_id).update(password=password)
+			old_password = uf.cleaned_data['old_password']
+			new_password1 = uf.cleaned_data['new_password1']
+			new_password2 = uf.cleaned_data['new_password2']
+			if new_password1 != new_password2:
+				return HttpResponse(u"两次密码不匹配")
+			users = Student.objects.filter(stu_id=stu_id,password=old_password)
+			if len(users)==0:
+				return HttpResponse(u"旧密码错误")
+			Student.objects.filter(stu_id=stu_id).update(password=new_password2)
 			return HttpResponseRedirect('/index/')
 	return render(request,'updatepassword.html',{'stu_id':stu_id})
 
@@ -290,3 +302,25 @@ def search_notice(request):
 	search_title = request.GET.get("search_title","0")
 	notices = Notice.objects.filter(title__contains=search_title)
 	return render(request,"search_notice.html",{'notices':notices})
+
+
+def test_suit_link(request):
+	return render(request,"test_suit_link.html")
+
+def personal_center(request):
+	stu_id = request.session.get("stu_id","anybody")
+	users = Student.objects.filter(stu_id=stu_id)
+	if len(users) == 0:
+		return HttpResponseRedirect('/login/')
+	return render(request,"personal_center.html",{'users':users})
+
+def read_more(request):
+	stu_id = request.session.get("stu_id","anybody")
+	users = Student.objects.filter(stu_id=stu_id)
+	if len(users) == 0:
+		return HttpResponseRedirect('/login/')
+	notices = Notice.objects.all().order_by('-cre_date')
+	return render(request,'read_more.html',{"notices":notices})
+
+test_suit_link = staff_member_required(test_suit_link)
+all_upload = staff_member_required(all_upload)

@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from app import views as app_views
 urlpatterns = [
+    url(r'^test_suit_link/',app_views.test_suit_link),
     url(r'^admin/', admin.site.urls),
     url(r'^login/$',app_views.login),
     url(r'^index/$',app_views.index),
@@ -39,4 +40,6 @@ urlpatterns = [
     url(r'^student_upload/',app_views.student_upload),
     url(r'^all_upload/',app_views.all_upload),  
     url(r'^search_notice/',app_views.search_notice),
+    url(r'^personal_center/',app_views.personal_center),
+    url(r'^read_more/',app_views.read_more),
 ]

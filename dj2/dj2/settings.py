@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'suit',
+    'suit_redactor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,7 +128,11 @@ DATA_FORMAT = 'Y-m-d'
 STATIC_URL = '/static/'
 
 SUIT_CONFIG = {
-    
     'ADMIN_NAME':'apartment_system',
     'LIST_PER_PAGE':10,
+    'MENU': (
+    {'app': 'auth', 'label': u'权限管理', 'icon': 'icon-lock'},
+    {'app': 'app', 'label': u'平台用户', 'icon': 'icon-user'},
+    {'url': '/all_upload/', 'label': u'上传文件', 'icon': 'icon-lock'},
+    ),
 }

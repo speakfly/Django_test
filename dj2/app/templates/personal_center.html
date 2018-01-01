@@ -1,0 +1,30 @@
+{%  extends "front_base.html" %}
+
+{% block content %}
+
+<div class="container">
+<a href='/updatepassword/'>修改密码</a>
+
+<table class="table .table-bordered table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">学号</th>
+      <th scope="col">姓名</th>
+      <th scope="col">班别</th>
+      <th scope="col">宿舍号</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{%  for user in users %}
+    <tr>
+      <th scope="row">{{user.stu_id}}</th>
+      <th scope="row">{{user.stu_name}}</th>
+      <th scope="row">{{user.gra_name.gra_name}}</th>
+      <th scope="row">{{user.room_id.room_id}}</th>  
+    </tr>
+    {% endfor  %}
+	</tbody>
+</table>
+
+</div>
+{% endblock %}
