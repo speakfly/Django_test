@@ -1,0 +1,60 @@
+{%  extends "front_base.html" %}
+
+{% block content %}
+
+<div class="container">
+<a href='/updatepassword/'>修改密码</a>
+<p></p>
+<a class="nav-link" href="/logout/">退出</a>
+<table class="table .table-bordered table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">工号</th>
+      <th scope="col">工资</th>
+      <th scope="col">税收</th>
+      <th scope="col">保险</th>
+      <th scope="col">奖励</th>
+      <th scope="col">实发工资</th>
+      <th scope="col">日期</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%  for money in money_list %}
+    <tr>
+      <th scope="row">{{money.enp_id.enp_id}}</th>
+      <th scope="row">{{money.wage}}</th>
+      <th scope="row">{{money.tax}}</th>
+      <th scope="row">{{money.insu}}</th>
+      <th scope="row">{{money.bonus}}</th>   
+      <th scope="row">{{money.real_wage}}</th>
+      <th scope="row">{{money.date}}</th>
+    </tr>
+    {% endfor  %}
+  </tbody>
+</table>
+<p></p>
+<p></p>
+<p></p>
+<table class="table .table-bordered table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">工号</th>
+      <th scope="col">日期</th>
+      <th scope="col">成绩</th>
+      <th scope="col">详情</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%  for checking in checking_in_list %}
+    <tr>
+      <th scope="row">{{checking.enp_id.enp_id}}</th>
+      <th scope="row">{{checking.che_date}}</th>
+      <th scope="row">{{checking.che_grade}}</th>
+      <th scope="row">{{checking.che_mess}}</th>  
+    </tr>
+    {% endfor  %}
+  </tbody>
+</table>
+
+</div>
+{% endblock %}

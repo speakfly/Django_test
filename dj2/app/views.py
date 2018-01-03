@@ -323,4 +323,8 @@ def read_more(request):
 	return render(request,'read_more.html',{"notices":notices})
 
 test_suit_link = staff_member_required(test_suit_link)
-all_upload = staff_member_required(all_upload)
+student_upload = staff_member_required(student_upload)
+room_upload = staff_member_required(room_upload)
+apartment_upload = staff_member_required(apartment_upload)
+grade_upload = staff_member_required(grade_upload)
+apartment_upload = staff_member_required(apartment_upload)

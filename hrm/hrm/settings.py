@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vaccq45sp6mx3i&c=wk2ktwj8)cmc#&oiqz-r1^uzsqrqmk54w'
+SECRET_KEY = 'rt%h)sc+h@=6d)qvb9dem+)8i=nh65%s%1h8r(f3+jobp7v3a@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -122,13 +122,19 @@ DATETIME_FORMAT = 'Y-m-d H:i:s'
 DATA_FORMAT = 'Y-m-d'
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-STATIC_URL = '/static/'
 
 SUIT_CONFIG = {
     
     'ADMIN_NAME':'HRM',
     'LIST_PER_PAGE':20,
+    'MENU': (
+    {'app': 'auth', 'label': u'权限管理', 'icon': 'icon-lock'},
+    {'app': 'app', 'label': u'平台用户', 'icon': 'icon-user'},
+    {'url': '/all_upload/', 'label': u'上传文件', 'icon': 'icon-lock'},
+    ),
 }
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+STATIC_URL = '/static/'

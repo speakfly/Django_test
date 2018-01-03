@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>index</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> 
+  </head>
+  <body>
+      <!-- <div class="container"> -->
+<div class="container">
+
+
+<table class="table .table-bordered table-hover">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">模板</th>
+      <th scope="col">上传文件</th>
+      <th scope="col">处理</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><a href='/department_exmaple_download/'>部门</a></td>
+      <form enctype="multipart/form-data" action="/department_upload/" method="post">  
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="department_file" />  
+      </td> 
+      <td>
+      <input type="submit" value="upload"/>  
+      </form>  
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><a href='/profession_exmaple_download/'>职业</a></td>
+      <form enctype="multipart/form-data" action="/profession_upload/" method="post">  
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="profession_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td><a href='/enployee_exmaple_download/'>员工</a></td>
+      <form enctype="multipart/form-data" action="/enployee_upload/" method="post">  
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="enployee_file"/>  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td><a href='/checking_in_exmaple_download/'>考勤</a></td>
+      <form enctype="multipart/form-data" action="/checking_in_upload/" method="post">
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="checking_in_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td><a href='/money_exmaple_download/'>金额</a></td>
+      <form enctype="multipart/form-data" action="/money_upload/" method="post">
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="money_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td><a href='/workshop_exmaple_download/'>车间</a></td>
+      <form enctype="multipart/form-data" action="/workshop_upload/" method="post">
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="workshop_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td><a href='/sales_exmaple_download/'>销售</a></td>
+      <form enctype="multipart/form-data" action="/sales_upload/" method="post">
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="sales_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td><a href='/logistics_exmaple_download/'>后勤</a></td>
+      <form enctype="multipart/form-data" action="/logistics_upload/" method="post">
+      {%  csrf_token  %}
+      <td>
+      <input type="file" name="logistics_file" />  
+      </td>  
+      <td>
+      <input type="submit" value="upload"/>  
+      </td> 
+      </form>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
